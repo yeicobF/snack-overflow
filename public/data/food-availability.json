@@ -1,0 +1,9 @@
+{
+  "food": [
+    {
+      "id": 1,
+      "name": "Rice",
+      "quantity": 10
+    }
+  ]
+}

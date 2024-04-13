@@ -1,0 +1,54 @@
+{
+  "order": [
+    {
+      "id": 1,
+      "providerId": 1,
+      "name": "Rice",
+      "unit": "kg",
+      "quantity": 5,
+      "packages": 5,
+      "total": 25,
+      "maxPackagesAvailable": 5
+    },
+    {
+      "id": 2,
+      "providerId": 2,
+      "name": "Chicken",
+      "unit": "kg",
+      "quantity": 2,
+      "packages": 2,
+      "total": 4,
+      "maxPackagesAvailable": 3
+    },
+    {
+      "id": 3,
+      "providerId": 2,
+      "name": "Fish",
+      "unit": "kg",
+      "quantity": 3,
+      "packages": 3,
+      "total": 9,
+      "maxPackagesAvailable": 6
+    },
+    {
+      "id": 4,
+      "providerId": 3,
+      "name": "Egg",
+      "unit": "dozen",
+      "quantity": 2,
+      "packages": 2,
+      "total": 4,
+      "maxPackagesAvailable": 4
+    },
+    {
+      "id": 5,
+      "providerId": 4,
+      "name": "Milk",
+      "unit": "liters",
+      "quantity": 2,
+      "packages": 2,
+      "total": 4,
+      "maxPackagesAvailable": 2
+    }
+  ]
+}
