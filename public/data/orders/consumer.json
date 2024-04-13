@@ -1,0 +1,26 @@
+{
+  "orders": [
+    {
+      "_id": 1,
+      "providerName": "Rice Provider",
+      "location": "Eduardo Molina 6730, Granjas Modernas, Gustavo A. Madero, 07460 Ciudad de México, CDMX",
+      "locationUrl": "https://maps.app.goo.gl/Kk2shgErPxukWz5t8",
+      "distanceKm": 2,
+      "estimatedTime": "10 minutes",
+      "quantity": 10,
+      "unit": "kg",
+      "status": "pending"
+    },
+    {
+      "_id": 2,
+      "providerName": "Meat Provider",
+      "location": "Nte 82-A 6549, San Pedro el Chico, Gustavo A. Madero, 07480 Ciudad de México, CDMX",
+      "locationUrl": "https://maps.app.goo.gl/29sYRHxtAsGrDfwQ9",
+      "distanceKm": 4,
+      "estimatedTime": "20 minutes",
+      "quantity": 5,
+      "unit": "kg",
+      "status": "pending"
+    }
+  ]
+}
