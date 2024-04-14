@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card"
 import { DotIcon } from "lucide-react"
 import Link from "next/link"
-import { getOrdersByConsumer } from "../api/consumer-orders/route"
+import { getOrdersByConsumer } from "@/app/api"
 
 export default async function ConsumerOrdersPage() {
   const { orders } = await getOrdersByConsumer()

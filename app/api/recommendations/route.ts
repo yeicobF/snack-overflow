@@ -1,32 +1,13 @@
-import { response } from '../_common';
-import {
-  MOCK_RECOMMENDATIONS_RESTAURANT_A,
-  MOCK_RECOMMENDATIONS_RESTAURANT_B,
-  MOCK_RECOMMENDATIONS_RESTAURANT_C,
-} from './mockRecommendations';
+import { getMockRecommendations } from ".."
+import { response } from "../_common"
 
 type Params = {
-  people: string;
-};
-export const getMockRecommendations = async () => {
-  const recommendationA =
-    MOCK_RECOMMENDATIONS_RESTAURANT_A[
-      Math.floor(Math.random() * MOCK_RECOMMENDATIONS_RESTAURANT_A.length)
-    ];
-  const recommendationB =
-    MOCK_RECOMMENDATIONS_RESTAURANT_B[
-      Math.floor(Math.random() * MOCK_RECOMMENDATIONS_RESTAURANT_B.length)
-    ];
-  const recommendationC =
-    MOCK_RECOMMENDATIONS_RESTAURANT_C[
-      Math.floor(Math.random() * MOCK_RECOMMENDATIONS_RESTAURANT_C.length)
-    ];
-  return { providers: [recommendationA, recommendationB, recommendationC] };
-};
+  people: string
+}
 
 export async function GET(request: Request, context: { params: Params }) {
-  const res = await getMockRecommendations();
-  return response(res);
+  const res = await getMockRecommendations()
+  return response(res)
 }
 
 // Define params type according to your route parameters (see table below)
