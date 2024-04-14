@@ -17,9 +17,14 @@ export function Record({
   locationDisplayName,
   locationUrl,
   food,
-}: GetOrdersId & {
+}: {
   provider?: string
   consumer?: string
+  _id: string
+  date: string
+  locationDisplayName: string
+  locationUrl: string
+  food: GetOrdersId["food"]
 }) {
   return (
     <Table>
