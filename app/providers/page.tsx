@@ -60,7 +60,7 @@ export default function Home() {
           <h3 className="text-4xl font-semibold mb-4 py-3">
             Let's rally for a hunger-free future!
           </h3>
-          <div className="px-36 mb-20">
+          <div className="px-36 mb-16">
             <p className="text-base mb-4">
               We find ourselves in a world where abundance and scarcity
               alarmingly coexist. In Mexico, 20.4 million tons of food are
@@ -83,7 +83,7 @@ export default function Home() {
             </p>
           </div>
           <div className="p-6">
-            <h2 className="text-4xl font-semibold mb-4 py-3" id="donate">
+            <h2 className="text-4xl font-semibold mt-4 mb-4 py-3" id="donate">
               Donate your food here
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-6">
