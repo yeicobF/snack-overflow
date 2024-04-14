@@ -1,76 +1,70 @@
-import { GetOrdersId } from '@/app/api/_dto/getOrdersId';
+import { GetOrdersId } from "@/app/api/_dto/getOrdersId"
 import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-  } from "@/components/ui/table"
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
-const order: GetOrdersId = {
-  _id: "123", 
-  date: "01/01/2024", 
-  consumer: "Nombre del consumidor", 
-  provider: "Nombre del proveedor", 
-  locationDisplayName: "Nombre de la ubicación", 
-  locationUrl: "https://www.google.com/maps/@19.4697012,-99.1380162,13z", 
-  food: [
-    {
-      name: "Nombre del alimento", 
-      unit: "Unidad", 
-      packages: "Paquetes", 
-      total: "Total",
-      quantity: "Cantidad", 
-      recollectionDateRange: "DD/MMM to DD/MMM from HH:mm to HH:mm",
-    },
-    {
-      name: "Nombre del alimento", 
-      unit: "Unidad", 
-      packages: "Paquetes", 
-      total: "Total",
-      quantity: "Cantidad", 
-      recollectionDateRange: "DD/MMM to DD/MMM from HH:mm to HH:mm",
-    },
-    {
-      name: "Nombre del alimento", 
-      unit: "Unidad", 
-      packages: "Paquetes", 
-      total: "Total",
-      quantity: "Cantidad", 
-      recollectionDateRange: "DD/MMM to DD/MMM from HH:mm to HH:mm",
-    },
-  ],
-};
-
-export function Record() {
-    
-    return (
-        <Table>
-            <TableCaption>A detailed list of your order</TableCaption>
-            <TableHeader>
-                <TableRow>
-                <TableHead className="w-[100px]">Provider</TableHead>
-                <TableHead>Name</TableHead>
-                <TableHead>Quantity</TableHead>
-                <TableHead>Packages</TableHead>
-                <TableHead>Total</TableHead>
-                <TableHead className="text-right">Recollection Date Range</TableHead>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {order.food.map((food) => (
-                <TableRow>
-                  <TableCell className="font-medium">{order.consumer}</TableCell>
-                  <TableCell>{food.name}</TableCell>
-                  <TableCell>{food.quantity} {food.unit}</TableCell>
-                  <TableCell>{food.packages}</TableCell>
-                  <TableCell>{food.total}</TableCell>
-                  <TableCell className="text-right">{food.recollectionDateRange}</TableCell>
-                </TableRow>
-                ))}
-            </TableBody>
-        </Table>
-    )
+export function Record({
+  _id,
+  date,
+  consumer,
+  provider,
+  locationDisplayName,
+  locationUrl,
+  food,
+}: GetOrdersId & {
+  provider?: string
+  consumer?: string
+}) {
+  return (
+    <Table>
+      <TableCaption>A detailed list of your order</TableCaption>
+      <TableHeader>
+        <TableRow>
+          {provider && <TableHead className="w-[100px]">Provider</TableHead>}
+          {consumer && <TableHead className="w-[100px]">Consumer</TableHead>}
+          <TableHead>Name</TableHead>
+          <TableHead>Quantity</TableHead>
+          <TableHead>Packages</TableHead>
+          <TableHead>Total</TableHead>
+          <TableHead className="text-right">Recollection Date Range</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {food?.map(
+          ({
+            name,
+            quantity,
+            unit,
+            packages,
+            total,
+            recollectionDateRange,
+          }) => {
+            return (
+              <TableRow key={name}>
+                {provider && <TableCell>{provider}</TableCell>}
+                {consumer && (
+                  <TableCell className="font-medium">{consumer}</TableCell>
+                )}
+                <TableCell>{name}</TableCell>
+                <TableCell>
+                  {quantity} {unit}
+                </TableCell>
+                <TableCell>{packages}</TableCell>
+                <TableCell>{total}</TableCell>
+                <TableCell className="text-right">
+                  {recollectionDateRange}
+                </TableCell>
+              </TableRow>
+            )
+          },
+        )}
+      </TableBody>
+    </Table>
+  )
 }
