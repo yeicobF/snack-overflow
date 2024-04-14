@@ -1,18 +1,18 @@
 import { ObjectId } from 'mongodb';
 import clientPromise from '../_common/mongodb';
 import { Items } from '../_collections/items';
+import { response } from '../_common';
 
 type Params = {
   order: string;
 };
-async function getOrdersByConsumer(consumerId: string) {
+async function getOrdersByConsumer() {
+  const consumerId = '661b638524854d0f62b34761';
   const client = await clientPromise;
 
   try {
     const database = client.db(process.env['DB_NAME']);
     const ordersCollection = database.collection('Orders');
-    const providersCollection = database.collection('Providers');
-    const itemsCollection = database.collection('Items');
 
     // Aggregate orders linked to the consumer ID
     const orders = await ordersCollection
@@ -96,8 +96,8 @@ async function getOrdersByConsumer(consumerId: string) {
 }
 
 export async function GET(request: Request, context: { params: Params }) {
-  const order = '661b60f96437fe1cecec89b4';
-  return getOrdersByConsumer(order);
+  const res = await getOrdersByConsumer();
+  return response(res);
 }
 
 // Define params type according to your route parameters (see table below)
