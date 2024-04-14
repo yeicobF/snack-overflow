@@ -28,6 +28,9 @@ getRecommendation/
 The response is a JSON object that includes the restaurant with the highest score based on the model. Additionally, there will be a package suggestion of the food supply for the restaurant.
 
 ### Install conda list of packages
+```
+conda create -n env_name --file conda_packages.txt
+```
 
 ## How to start the API
 
