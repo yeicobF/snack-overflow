@@ -8,7 +8,7 @@ import {
 type Params = {
   people: string;
 };
-const getMockRecommendations = () => {
+export const getMockRecommendations = async () => {
   const recommendationA =
     MOCK_RECOMMENDATIONS_RESTAURANT_A[
       Math.floor(Math.random() * MOCK_RECOMMENDATIONS_RESTAURANT_A.length)
@@ -25,7 +25,7 @@ const getMockRecommendations = () => {
 };
 
 export async function GET(request: Request, context: { params: Params }) {
-  const res = getMockRecommendations();
+  const res = await getMockRecommendations();
   return response(res);
 }
 
