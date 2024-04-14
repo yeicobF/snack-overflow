@@ -10,8 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 const siteConfig = {
   name: "snack overflow",
   url: "",
-  description:
-    "Snack Overflow",
+  description: "Snack Overflow",
 }
 export const metadata: Metadata = {
   title: {

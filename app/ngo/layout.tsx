@@ -1,17 +1,6 @@
 import { Container } from "@/components/container"
-import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { LoaderCircleIcon, ShoppingBagIcon } from "@/icons"
-import { SaveIcon, XIcon } from "lucide-react"
 import Image from "next/image"
+import { OrderRecommendations } from "./order-recommendation"
 
 const ONG = {
   name: "Food for All",
@@ -36,36 +25,10 @@ export default function NgoLayout({ children }: { children: React.ReactNode }) {
           <p className="text-slate-200">{ONG.description}</p>
         </div>
       </header>
+
       {children}
 
-      <Dialog>
-        <DialogTrigger asChild>
-          <Button className="fixed bottom-12 right-12">
-            <ShoppingBagIcon className="w-4 h-4 mr-2" />
-            Generate recommendation
-          </Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Order recommendation</DialogTitle>
-            <DialogDescription>
-              We&apos;ll generate a recommendation based on your
-              organization&apos;s needs.
-            </DialogDescription>
-          </DialogHeader>
-
-          <DialogFooter className="flex flex-row gap-2 justify-between sm:justify-between">
-            <Button variant="outline" className="w-full" type="submit">
-              <LoaderCircleIcon className="w-4 h-4 mr-2" />
-              Regenerate
-            </Button>
-            <Button variant="default" className="w-full" type="submit">
-              <SaveIcon className="w-4 h-4 mr-2" />
-              Save
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      <OrderRecommendations />
     </Container>
   )
 }
