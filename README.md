@@ -2,7 +2,7 @@
 
 Welcome to the repository of the "FoodAid" project, a platform that connects NGOs with supermarket chains and restaurants to facilitate the donation of surplus food nearing its expiration date, thereby helping to combat hunger in Mexico.
 
-### Objective
+## Objective
 
 The main goal of this project is to reduce food waste and help those in need by providing a platform where NGOs can request and receive food donations from restaurants and supermarkets.
 
