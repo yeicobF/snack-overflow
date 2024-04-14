@@ -3,11 +3,10 @@ import { ObjectId } from 'mongodb';
 export interface GetRecommendations {
   providers: {
     _id: string;
-    location: string;
+    locationDisplayName: string;
     locationUrl: string;
     name: string;
     food: {
-      _id: ObjectId;
       name: string;
       unit: string;
       /**same as db */
