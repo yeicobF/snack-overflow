@@ -1,7 +1,27 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+function HeaderLink({ href, children }) {
+  const pathname = usePathname()
+
+  return (
+    <Link
+      className={`hover:underline ${
+        pathname === href ? "underline font-medium ring-offset-2" : ""
+      }`}
+      href={href}
+    >
+      {children}
+    </Link>
+  )
+}
 
 export function SiteHeader() {
+  const pathname = usePathname()
+
   return (
     <header className="w-full flex items-center">
       <nav
@@ -20,12 +40,9 @@ export function SiteHeader() {
           />
         </Link>
         <div className="flex gap-4">
-          <Link className="hover:underline" href="/providers">
-            Providers
-          </Link>
-          <Link className="hover:underline" href="/ngo">
-            Non government organizations
-          </Link>
+          <HeaderLink href="/metrics">Statistics</HeaderLink>
+          <HeaderLink href="/providers">Providers</HeaderLink>
+          <HeaderLink href="/ngo">Non government organizations</HeaderLink>
         </div>
       </nav>
     </header>
