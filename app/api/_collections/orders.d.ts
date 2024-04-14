@@ -1,11 +1,15 @@
-import { ObjectId } from "bson"
+import { ObjectId } from 'bson';
 
 export interface Orders {
-    _id: ObjectId
-    consumer: ObjectId
-    provider: ObjectId
-    items: {
-        _id: ObjectId
-        quantity: number
-    }[]
+  _id: ObjectId;
+  /**Joined with Consumers collection */
+  consumer: ObjectId;
+  /**Joined with Providers collection */
+  provider: ObjectId;
+  items: {
+    /**Joined with Items collection */
+    _id: ObjectId;
+    /**Number of packages requested*/
+    packages: number;
+  }[];
 }
