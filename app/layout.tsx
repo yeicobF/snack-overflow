@@ -45,7 +45,7 @@ export default function RootLayout({
             <div vaul-drawer-wrapper="">
               <div className="relative flex min-h-dvh flex-col bg-background items-stretch">
                 <SiteHeader />
-                <main className="flex flex-col flex-1 justify-start items-stretch container relative py-10 max-w-xxl">
+                <main className="flex flex-col flex-1 justify-start items-stretch relative max-w-xxl p-0">
                   {children}
                 </main>
               </div>
