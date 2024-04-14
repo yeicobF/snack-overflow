@@ -1,7 +1,7 @@
-import Image from "next/image";
-import * as React from "react";
-import { ExcelUploadForm } from "@/components/excel-upload-form";
-import Link from "next/link";
+import Image from "next/image"
+import * as React from "react"
+import { ExcelUploadForm } from "@/components/excel-upload-form"
+import Link from "next/link"
 
 function tr(
   food: string,
@@ -11,10 +11,10 @@ function tr(
   start_date: Date,
   end_date: Date,
   start_hour: string,
-  end_hour: string
+  end_hour: string,
 ) {
-  const formattedStartDate = new Date(start_date).toLocaleDateString();
-  const formattedEndDate = new Date(end_date).toLocaleDateString();
+  const formattedStartDate = new Date(start_date).toLocaleDateString()
+  const formattedEndDate = new Date(end_date).toLocaleDateString()
   return (
     <tr className="bg-white">
       <td className="border border-gray-300 px-4 py-2">{food}</td>
@@ -26,14 +26,14 @@ function tr(
       <td className="border border-gray-300 px-4 py-2">{start_hour}</td>
       <td className="border border-gray-300 px-4 py-2">{end_hour}</td>
     </tr>
-  );
+  )
 }
 
 export default function Home() {
   return (
     <div className="bg-white">
       <div
-        className="bg-background relative text-center flex flex-col justify-center items-center min-h-[400px] max-h-[680px] h-[80vw] bg-cover bg-center"
+        className="bg-black/90 relative text-center flex flex-col justify-center items-center min-h-[400px] max-h-[680px] h-[80vw] bg-cover bg-center text-white"
         style={{ backgroundImage: "url('img/feeding-people.png')" }}
       >
         <h1
@@ -49,9 +49,8 @@ export default function Home() {
           Join us in aiding NGOs
         </h3>
         <Link
-          href="#"
-          className="inline-block px-6 py-1 text-lg font-semibold text-white bg-blue-500 hover:bg-blue-600 rounded-lg"
-          style={{ textShadow: "1px 1px 1px black" }}
+          href="#donate"
+          className="inline-block px-6 py-1 text-lg font-semibold text-slate-100 bg-green-700 hover:bg-green-500 rounded-lg transition-all"
         >
           Donate
         </Link>
@@ -84,7 +83,7 @@ export default function Home() {
             </p>
           </div>
           <div className="p-6">
-            <h2 className="text-4xl font-semibold mb-4 py-3">
+            <h2 className="text-4xl font-semibold mb-4 py-3" id="donate">
               Donate your food here
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-6">
@@ -100,9 +99,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-20 flex justify-center items-center flex-col">
-              <h3 className="text-4xl font-semibold mb-7 ">
-                Format Example
-              </h3>
+              <h3 className="text-4xl font-semibold mb-7 ">Format Example</h3>
               <table className="max-w-3xl table-auto border border-collapse border-gray-300">
                 <thead className="bg-green-200">
                   <tr>
@@ -140,7 +137,7 @@ export default function Home() {
                       new Date("2024/08/12"),
                       new Date("2024/08/14"),
                       "15:00",
-                      "18:00"
+                      "18:00",
                     ),
                     tr(
                       "Beans",
@@ -150,7 +147,7 @@ export default function Home() {
                       new Date("2024/08/13"),
                       new Date("2024/08/15"),
                       "16:00",
-                      "19:00"
+                      "19:00",
                     ),
                     tr(
                       "Corn",
@@ -160,7 +157,7 @@ export default function Home() {
                       new Date("2024/08/14"),
                       new Date("2024/08/16"),
                       "17:00",
-                      "20:00"
+                      "20:00",
                     ),
                     tr(
                       "Wheat",
@@ -170,7 +167,7 @@ export default function Home() {
                       new Date("2024/08/15"),
                       new Date("2024/08/17"),
                       "18:00",
-                      "21:00"
+                      "21:00",
                     ),
                     tr(
                       "Barley",
@@ -180,7 +177,7 @@ export default function Home() {
                       new Date("2024/08/16"),
                       new Date("2024/08/18"),
                       "19:00",
-                      "22:00"
+                      "22:00",
                     ),
                   ].map((row, index) => (
                     <React.Fragment key={index}>{row}</React.Fragment>
@@ -284,5 +281,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -15,14 +15,14 @@ export default async function ConsumerOrdersPage() {
 
   return (
     <section>
-      <h2 className="text-3xl font-medium text-slate-200 mb-4">Orders</h2>
+      <h2 className="text-3xl font-medium text-primary mb-4">Orders</h2>
 
       <div className="gap-2 grid sm:grid-cols-2">
         {orders?.map(
           ({
             _id,
             providerName,
-            location,
+            locationDisplayName,
             locationUrl,
             distanceKm,
             estimatedTime,
@@ -54,15 +54,15 @@ export default async function ConsumerOrdersPage() {
               </CardHeader>
               <CardContent className="flex flex-col gap-2">
                 <Link
-                  className="text-muted-foreground hover:text-slate-100 text-xs flex"
+                  className="text-muted-foreground hover:underline text-xs flex"
                   href={locationUrl}
                   target="_blank"
                 >
-                  {location}
+                  {locationDisplayName}
                 </Link>
 
                 <Link
-                  className="hover:text-slate-100 text-slate-300 font-medium text-sm hover:underline underline-offset-2 decoration-2 w-fit"
+                  className="hover:text-secondary-foreground/80 text-secondary-foreground font-medium text-sm hover:underline underline-offset-2 decoration-2 w-fit"
                   href={`/ngo/${_id}`}
                 >
                   View order
