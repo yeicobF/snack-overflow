@@ -1,6 +1,6 @@
 import { Container } from "@/components/container"
 import Image from "next/image"
-import { OrderRecommendations } from "../../components/order-recommendation"
+import { OrderRecommendations } from "@/components/order-recommendation"
 
 const ONG = {
   name: "Food for All",
