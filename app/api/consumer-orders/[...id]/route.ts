@@ -2,9 +2,6 @@ import { ObjectId } from 'mongodb';
 import clientPromise from '../../_common/mongodb';
 import { response } from '../../_common';
 
-type Params = {
-  order: string;
-};
 export async function getOrderId(orderId: string) {
   const client = await clientPromise;
   try {

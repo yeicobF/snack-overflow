@@ -13,7 +13,6 @@ async function getOrdersByProvider() {
   try {
     const database = client.db(process.env['DB_NAME']);
     const ordersCollection = database.collection('Orders');
-    const consumersCollection = database.collection('Consumers');
 
     // Aggregate orders linked to the provider ID
     const orders = await ordersCollection

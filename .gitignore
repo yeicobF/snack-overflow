@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+ai_module/.ipynb_checkpoints/
+ai_module/data/
