@@ -1,7 +1,7 @@
 import { response } from '../_common';
 import clientPromise from '../_common/mongodb';
 
-async function getStatistics() {
+export async function getStatistics() {
   const client = await clientPromise;
   try {
     await client.connect();
