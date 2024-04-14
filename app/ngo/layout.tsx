@@ -10,7 +10,7 @@ const ONG = {
 
 export default function NgoLayout({ children }: { children: React.ReactNode }) {
   return (
-    <Container className="flex flex-col gap-12">
+    <Container className="flex flex-col gap-8 py-24">
       <header className="flex gap-4 items-center flex-col sm:flex-row">
         <Image
           width={96}
