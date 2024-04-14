@@ -159,7 +159,7 @@ export function OrderRecommendations() {
             variant="default"
             className="w-full"
             type="button"
-            onClick={fetchProviders}
+            onClick={() => fetchProviders()}
           >
             <LoaderCircleIcon className="w-4 h-4 mr-2" />
             Generate
