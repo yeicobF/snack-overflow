@@ -27,7 +27,11 @@ getRecommendation/
 
 The response is a JSON object that includes the restaurant with the highest score based on the model. Additionally, there will be a package suggestion of the food supply for the restaurant.
 
+### Install conda list of packages
+
 ## How to start the API
 
-## export FLASK_APP=main.py
-## flask run
+```
+export FLASK_APP=main.py
+flask run
+```
