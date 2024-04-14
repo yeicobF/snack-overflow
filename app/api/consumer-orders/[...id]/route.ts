@@ -1,5 +1,6 @@
 import { ObjectId } from 'mongodb';
 import clientPromise from '../../_common/mongodb';
+import { response } from '../../_common';
 
 type Params = {
   order: string;
@@ -13,6 +14,8 @@ export async function getOrderId(orderId: string) {
     const providersCollection = database.collection('Providers');
     const itemsCollection = database.collection('Items');
 
+    const d = await ordersCollection.find({}).toArray();
+    console.log(d);
     const order = await ordersCollection.findOne({
       _id: new ObjectId(orderId),
     });
@@ -61,7 +64,8 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   const order = params.id;
-  return getOrderId(order);
+  const res = await getOrderId(order[0]);
+  return response(res);
 }
 
 // Define params type according to your route parameters (see table below)
