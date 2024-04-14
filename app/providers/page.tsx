@@ -48,12 +48,21 @@ export default function Home() {
         >
           Join us in aiding NGOs
         </h3>
-        <Link
-          href="#donate"
-          className="inline-block px-6 py-1 text-lg font-semibold text-slate-100 bg-green-700 hover:bg-green-500 rounded-lg transition-all"
-        >
-          Donate
-        </Link>
+        <div className="flex flex-col gap-2">
+          <Link
+            href="/providers/orders"
+            className="inline-block px-6 py-1 text-lg font-semibold text-slate-100 bg-green-600 hover:bg-green-400 rounded-lg transition-all"
+          >
+            View provider orders
+          </Link>
+
+          <Link
+            href="#donate"
+            className="inline-block px-6 py-1 text-lg font-semibold text-slate-100 bg-green-700 hover:bg-green-500 rounded-lg transition-all"
+          >
+            Donate
+          </Link>
+        </div>
       </div>
       <div className="bg-white max-w-[1200px] z-10 relative text-center px-12 py-14 mt-[-40px] mx-auto border-t-8 border-green-500">
         <div className=" mx-auto p-6 bg-white rounded-lg shadow-lg text-gray-700">
