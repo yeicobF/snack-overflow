@@ -8,39 +8,17 @@ import {
 } from "@/components/ui/card"
 import { DotIcon } from "lucide-react"
 import Link from "next/link"
+import { getOrdersByConsumer } from "../api/consumer-orders/route"
 
 export default async function ConsumerOrdersPage() {
-  const orders = [
-    {
-      _id: 1,
-      providerName: "Rice Provider",
-      location:
-        "Eduardo Molina 6730, Granjas Modernas, Gustavo A. Madero, 07460 Ciudad de México, CDMX",
-      locationUrl: "https://maps.app.goo.gl/Kk2shgErPxukWz5t8",
-      distanceKm: 2,
-      estimatedTime: "10 minutes",
-      status: "in progress",
-      recollectionDateRange: "13/Apr to 15/Apr from 15:00 to 16:15",
-    },
-    {
-      _id: 2,
-      providerName: "Meat Provider",
-      location:
-        "Nte 82-A 6549, San Pedro el Chico, Gustavo A. Madero, 07480 Ciudad de México, CDMX",
-      locationUrl: "https://maps.app.goo.gl/29sYRHxtAsGrDfwQ9",
-      distanceKm: 4,
-      estimatedTime: "20 minutes",
-      status: "done",
-      recollectionDateRange: "13/Apr to 15/Apr from 14:00 to 18:30",
-    },
-  ]
+  const { orders } = await getOrdersByConsumer()
 
   return (
     <section>
       <h2 className="text-3xl font-medium text-slate-200 mb-4">Orders</h2>
 
       <div className="gap-2 grid sm:grid-cols-2">
-        {orders.map(
+        {orders?.map(
           ({
             _id,
             providerName,
