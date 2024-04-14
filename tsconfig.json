@@ -1,10 +1,13 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false, // Set strict to false to disable strict type checking
-    "noImplicitAny": false, // Allow 'any' types without explicit annotations
+    "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -19,9 +22,15 @@
       }
     ],
     "paths": {
-      "@/": ["./"]
+      "@/*": [
+        "./*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "/.ts", "/.tsx", ".next/types//*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
