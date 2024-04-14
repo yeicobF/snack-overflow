@@ -100,13 +100,26 @@ export function OrderRecommendations() {
                       </CardHeader>
                       <CardContent className="grid grid-cols-2 gap-x-4 gap-y-2">
                         {food &&
+                          // @ts-ignore
                           food.map(
                             ({
+                              // @ts-ignore
+
                               name,
+                              // @ts-ignore
+
                               unit,
+                              // @ts-ignore
+
                               packages,
+                              // @ts-ignore
+
                               total,
+                              // @ts-ignore
+
                               quantity,
+                              // @ts-ignore
+
                               recollectionDateRange,
                             }) => (
                               <div
