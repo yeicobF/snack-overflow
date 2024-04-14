@@ -52,11 +52,11 @@ export function OrderRecommendations() {
 
         <section className="flex flex-col gap-2 mt-4">
           <header className="sticky -top-7 bg-background">
-            <h3 className="text-xl font-medium text-zinc-300">
+            <h3 className="text-xl font-medium text-primary">
               Recommended items
             </h3>
 
-            <div className="text-slate-300 grid sm:grid-cols-2 py-4">
+            <div className="text-secondary-foreground grid sm:grid-cols-2 py-4">
               <div className="flex flex-col gap-2">
                 <Label htmlFor="people" className="text-balance">
                   Number of people
@@ -107,7 +107,7 @@ export function OrderRecommendations() {
                                 className="flex flex-col gap-2 justify-between"
                               >
                                 <header>
-                                  <h4 className="text-lg text-balance text-slate-200">
+                                  <h4 className="text-lg text-balance text-primary">
                                     <span className="font-medium">{name}</span>{" "}
                                     packages
                                   </h4>
@@ -151,18 +151,18 @@ export function OrderRecommendations() {
         </section>
 
         <DialogFooter className="flex flex-row gap-4 justify-between sm:justify-between sticky -bottom-7 backdrop-blur-sm py-6 bg-background">
+          <Button variant="outline" className="w-full" type="submit">
+            <SaveIcon className="w-4 h-4 mr-2" />
+            Save
+          </Button>
           <Button
-            variant="outline"
+            variant="default"
             className="w-full"
             type="button"
             onClick={fetchProviders}
           >
             <LoaderCircleIcon className="w-4 h-4 mr-2" />
             Generate
-          </Button>
-          <Button variant="default" className="w-full" type="submit">
-            <SaveIcon className="w-4 h-4 mr-2" />
-            Save
           </Button>
         </DialogFooter>
       </DialogContent>
