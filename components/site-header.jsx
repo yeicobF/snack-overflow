@@ -1,5 +1,6 @@
 "use client"
 
+import { siteConfig } from "@/config/site"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -30,7 +31,7 @@ export function SiteHeader() {
           transform: "translate(calc(50vw - 50%))",
         }}
       >
-        <Link href="/">
+        <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="Snack Overflow Logo"
@@ -38,6 +39,9 @@ export function SiteHeader() {
             width={48}
             className="rounded-full cursor-pointer object-center object-cover"
           />
+          <span className="font-semibold hidden sm:block">
+            {siteConfig.name}
+          </span>
         </Link>
         <div className="flex gap-4 items-center ">
           <HeaderLink href="/metrics">Statistics</HeaderLink>

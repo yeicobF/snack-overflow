@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Snack Overflow",
+  name: "foodAid",
   url: "",
-  description: "Snack Overflow",
+  description: "foodAid",
 }
