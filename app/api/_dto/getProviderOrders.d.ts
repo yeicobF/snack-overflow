@@ -1,11 +1,11 @@
-
 export interface GetProviderOrders {
-    orders: {
-        _id: string
-        consumerName: string
-        consumerImageSrc: string
-        quantityKg: string
-        date: string
-    }[]
-    ordersToday: number
+  /**provider id */
+  _id: string;
+  orders: {
+    /**order Id */
+    _id: string;
+    consumerName: string;
+    /**date of creation based on the orderId (ObjectId) */
+    date: string;
+  }[];
 }

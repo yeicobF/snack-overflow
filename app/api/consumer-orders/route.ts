@@ -6,7 +6,7 @@ import { response } from '../_common';
 type Params = {
   order: string;
 };
-async function getOrdersByConsumer() {
+export async function getOrdersByConsumer() {
   const consumerId = '661b638524854d0f62b34761';
   const client = await clientPromise;
 
