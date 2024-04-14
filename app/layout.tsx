@@ -1,9 +1,10 @@
+import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/components/ui/toaster"
 import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { SiteHeader } from "@/components/site-header"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -48,6 +49,7 @@ export default function RootLayout({
                 <main className="flex flex-col flex-1 justify-start items-stretch relative max-w-xxl p-0">
                   {children}
                 </main>
+                <Toaster />
               </div>
             </div>
           </ThemeProvider>
