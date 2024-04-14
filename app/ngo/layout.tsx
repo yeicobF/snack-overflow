@@ -5,8 +5,7 @@ import { OrderRecommendations } from "./order-recommendation"
 const ONG = {
   name: "Food for All",
   description: "Non organization that helps people in need.",
-  image:
-    "https://images.unsplash.com/photo-1615897570582-285ffe259530?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3",
+  image: "/img/ngo.jpg",
 }
 
 export default function NgoLayout({ children }: { children: React.ReactNode }) {
@@ -21,8 +20,8 @@ export default function NgoLayout({ children }: { children: React.ReactNode }) {
           className="rounded-lg aspect-video w-full sm:aspect-square object-cover object-center sm:w-[96px] sm:h-[96px]"
         />
         <div className="w-full">
-          <h1 className="text-4xl font-semibold text-slate-100">{ONG.name}</h1>
-          <p className="text-slate-200">{ONG.description}</p>
+          <h1 className="text-4xl font-semibold text-primary">{ONG.name}</h1>
+          <p className="text-secondary-foreground">{ONG.description}</p>
         </div>
       </header>
 
