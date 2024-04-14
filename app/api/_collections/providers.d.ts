@@ -6,4 +6,5 @@ export interface Providers {
   locationDisplayName: string;
   latitude: number;
   longitud: number;
+  foodDonated: number;
 }
