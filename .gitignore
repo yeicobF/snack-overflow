@@ -37,3 +37,4 @@ next-env.d.ts
 
 ai_module/.ipynb_checkpoints/
 ai_module/data/
+ai_module/__pycache__/
