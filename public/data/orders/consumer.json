@@ -7,9 +7,8 @@
       "locationUrl": "https://maps.app.goo.gl/Kk2shgErPxukWz5t8",
       "distanceKm": 2,
       "estimatedTime": "10 minutes",
-      "quantity": 10,
-      "unit": "kg",
-      "status": "pending"
+      "status": "in progress",
+      "recollectionDateRange": "13/Apr to 15/Apr from 15:00 to 16:15"
     },
     {
       "_id": 2,
@@ -18,9 +17,8 @@
       "locationUrl": "https://maps.app.goo.gl/29sYRHxtAsGrDfwQ9",
       "distanceKm": 4,
       "estimatedTime": "20 minutes",
-      "quantity": 5,
-      "unit": "kg",
-      "status": "pending"
+      "status": "done",
+      "recollectionDateRange": "13/Apr to 15/Apr from 14:00 to 18:30"
     }
   ]
 }
