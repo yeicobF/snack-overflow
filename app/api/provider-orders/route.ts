@@ -46,8 +46,6 @@ async function getOrdersByProvider() {
   } catch (error) {
     console.error('Failed to retrieve orders by provider:', error);
     throw error;
-  } finally {
-    await client.close();
   }
 }
 

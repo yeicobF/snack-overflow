@@ -90,8 +90,6 @@ export async function getOrdersByConsumer() {
   } catch (error) {
     console.error('Failed to retrieve orders by consumer:', error);
     throw error;
-  } finally {
-    await client.close();
   }
 }
 
