@@ -78,6 +78,7 @@ export default async function ConsumerOrdersPage() {
                 <Link
                   className="text-muted-foreground hover:text-slate-100 text-xs flex"
                   href={locationUrl}
+                  target="_blank"
                 >
                   {location}
                 </Link>
