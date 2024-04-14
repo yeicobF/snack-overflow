@@ -9,8 +9,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import { LoaderCircleIcon, ShoppingBagIcon } from "@/icons"
-import { SaveIcon, XIcon } from "lucide-react"
+import { SaveIcon } from "lucide-react"
 import Image from "next/image"
 
 const ONG = {
@@ -46,22 +48,33 @@ export default function NgoLayout({ children }: { children: React.ReactNode }) {
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
+          <DialogHeader className="text-start">
             <DialogTitle>Order recommendation</DialogTitle>
             <DialogDescription>
               We&apos;ll generate a recommendation based on your
               organization&apos;s needs.
             </DialogDescription>
+            <DialogDescription>
+              These recommendations are based on the number of people that you
+              want to help.
+            </DialogDescription>
           </DialogHeader>
 
-          <DialogFooter className="flex flex-row gap-2 justify-between sm:justify-between">
-            <Button variant="outline" className="w-full" type="submit">
-              <LoaderCircleIcon className="w-4 h-4 mr-2" />
-              Regenerate
-            </Button>
+          <div className="grid grid-cols-2 items-center gap-4 my-4">
+            <Label htmlFor="people" className="text-center">
+              Number of people
+            </Label>
+            <Input id="people" defaultValue="1" min="1" type="number" />
+          </div>
+
+          <DialogFooter className="flex flex-row gap-4 justify-between sm:justify-between">
             <Button variant="default" className="w-full" type="submit">
               <SaveIcon className="w-4 h-4 mr-2" />
               Save
+            </Button>
+            <Button variant="outline" className="w-full" type="submit">
+              <LoaderCircleIcon className="w-4 h-4 mr-2" />
+              Generate
             </Button>
           </DialogFooter>
         </DialogContent>
