@@ -32,7 +32,7 @@ export function SiteHeader() {
       >
         <Link href="/">
           <Image
-            src="/logo.jpg"
+            src="/logo.png"
             alt="Snack Overflow Logo"
             height={48}
             width={48}
