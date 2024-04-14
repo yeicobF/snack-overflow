@@ -34,7 +34,7 @@ export default function Home() {
     <div className="bg-white">
       <div
         className="bg-black/90 relative text-center flex flex-col justify-center items-center min-h-[400px] max-h-[680px] h-[80vw] bg-cover bg-center text-white"
-        style={{ backgroundImage: "url('img/feeding-people.png')" }}
+        style={{ backgroundImage: "url('/img/feeding-people.png')" }}
       >
         <h1
           className="text-4xl font-bold mb-10 text-shadow-md"
@@ -58,7 +58,7 @@ export default function Home() {
       <div className="bg-white max-w-[1200px] z-10 relative text-center px-12 py-14 mt-[-40px] mx-auto border-t-8 border-green-500">
         <div className=" mx-auto p-6 bg-white rounded-lg shadow-lg text-gray-700">
           <h3 className="text-4xl font-semibold mb-4 py-3">
-            Let's rally for a hunger-free future!
+            Let&apos;s rally for a hunger-free future!
           </h3>
           <div className="px-36 mb-20">
             <p className="text-base mb-4">
@@ -92,9 +92,9 @@ export default function Home() {
                 <a
                   href="/files/food-supply-template.xlsx"
                   download={true}
-                  className="block text-3xl text-blue-500 hover:text-blue-700"
+                  className="block text-2xl font-semibold text-blue-500 hover:text-blue-700"
                 >
-                  Download template excel
+                  Download Excel template
                 </a>
               </div>
             </div>
