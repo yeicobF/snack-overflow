@@ -1,5 +1,6 @@
 "use client"
 
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
@@ -30,7 +31,13 @@ export function OrderRecommendations() {
   }
 
   return (
-    <Dialog>
+    <Dialog
+      onOpenChange={(isOpen) => {
+        if (!isOpen) {
+          setProviders([])
+        }
+      }}
+    >
       <DialogTrigger asChild>
         <Button className="fixed bottom-12 right-12">
           <ShoppingBagIcon className="w-4 h-4 mr-2" />
@@ -151,10 +158,24 @@ export function OrderRecommendations() {
         </section>
 
         <DialogFooter className="flex flex-row gap-4 justify-between sm:justify-between sticky -bottom-7 backdrop-blur-sm py-6 bg-background">
-          <Button variant="outline" className="w-full" type="submit">
+          <Button
+            variant="outline"
+            onClick={() =>
+              toast("You have successfully saved the order recommendation.", {
+                description: `Your order consists of ${providers.length} providers`,
+                action: {
+                  label: "Accept",
+                  onClick: () => {},
+                },
+              })
+            }
+            type="button"
+            className="z-50"
+          >
             <SaveIcon className="w-4 h-4 mr-2" />
             Save
           </Button>
+
           <Button
             variant="default"
             className="w-full"
