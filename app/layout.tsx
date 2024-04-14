@@ -5,14 +5,10 @@ import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { siteConfig } from "@/config/site"
 
 const inter = Inter({ subsets: ["latin"] })
 
-const siteConfig = {
-  name: "snack overflow",
-  url: "",
-  description: "Snack Overflow",
-}
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
