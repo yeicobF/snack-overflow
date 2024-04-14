@@ -1,0 +1,73 @@
+You have the following collections in mongodb:
+Providers {
+  _id: ObjectId;
+  name: string;
+  locationDisplayName: string;
+  latitude: number;
+  longitud: number;
+}
+Consumers {
+    _id: ObjectId;
+    name: string;
+}
+Orders {
+  _id: ObjectId;
+  /**Joined with Consumers collection */
+  consumer: ObjectId;
+  /**Joined with Providers collection */
+  provider: ObjectId;
+  items: {
+    /**Joined with Items collection */
+    _id: ObjectId;
+    /**Number of packages requested*/
+    packages: number;
+  }[];
+}
+Items {
+  _id: ObjectId;
+  /**Id of the provider that owns this food item */
+  providerId: ObjectId;
+  /**Name of the item */
+  name: string;
+  /**Quantity of food grouped into 1 packages */
+  quantity: number;
+  /**Unit of measurement */
+  unit: 'kg' | 'piece';
+  /**Number of groups */
+  packages: number;
+  /**Initial day of recollection DD/MM */
+  initialRecollectionDay: number;
+  /**Final day of recollection DD/MM due to food expiring date*/
+  finalRecollectionDay: number;
+  /**Initial time of recollection HH:mm due to the restaurant delivery hours */
+  initialRecollectionTime: number;
+  /**Final time of recollection HH:mm due to the restaurant delivery hours*/
+  finalRecollectionTime: number;
+}
+
+write code in typescript that will take an input _id corresponding to a specific order and will return the following, you can aggregate the data with queries to the mongodb and post process once the data is fetched, use only mongodb package, do not use mongoose:
+{
+  /**_id of the order */
+  _id: string;
+  /**Date created based on mongodb _id*/
+  date: string;
+  /**Consumer name */
+  consumer: string;
+  /**Porvider name */
+  provider: string;
+  /**Display name of the provider*/
+  locationDisplayName: string;
+  /**location Url from the provider, Based on longitud and latitude, for example https://www.google.com/maps/@19.4697012,-99.1380162,13z */
+  locationUrl: string;
+  food: {
+    name: string;
+    unit: string;
+    /**same as db */
+    packages: string;
+    /**same as db */
+    total: string;
+    quantity: string;
+    /**Based on the item recollection date and time range DD/MMM to DD/MMM from HH:mm to HH:mm */
+    recollectionDateRange: string;
+  }[];
+}
